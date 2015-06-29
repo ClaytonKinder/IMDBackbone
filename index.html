@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IMDBackbone</title>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,300|Roboto:400,100,700,400italic,100italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/template" id="movieTmpl">
+    <div class="movie">
+      <div class="movieInfoBlock">
+        <div class="movieTitleBlock">
+          <h3><%= Title %></h3>
+        </div>
+        <div class="movieDescriptionBlock">
+          <%= Plot %>
+        </div>
+        <div class="movieItemsBlock">
+          <div class="movieYearBlock">
+            <%= Year %>
+          </div>
+          <div class="movieGenreBlock">
+            <%= Genre %>
+          </div>
+          <div class="movieRatingBlock">
+            <%= Metascore %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+</head>
+<body>
+
+<header>
+  <div id="headerTitle">
+    <h1>Movies</h1>
+  </div>
+  <div id="headerSorting">
+    <div id="sortingTitle">
+      Title
+    </div>
+    <div id="sortingYear">
+      Year
+    </div>
+    <div id="sortingGenre">
+      Genre
+    </div>
+    <div id="sortingRating">
+      Rating
+    </div>
+  </div>
+</header>
+<main id="main">
+
+</main>
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="models.js"></script>
+<script src="views.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

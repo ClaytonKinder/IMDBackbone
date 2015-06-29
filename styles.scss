@@ -1,86 +1,127 @@
 /**************************
 SASS VARIABLES
 **************************/
+
+$tb: rgba(0,0,0,0.6);
+$tw: rgba(255,255,255,0.6);
+$fb: rgba(0,0,0,0.87);
+
+$pc: #8D0707;
+$lpc: #ED0C0C;
+$dpc: #630505;
+
+$sc: #0D3C5A;
+$lsc: #1B7BB8;
+$dsc: #0D3C59;
+
+$tc: #FFD700;
+
+$serif1: 'Merriweather', serif;
+$sans1: 'Roboto', sans-serif;
+
 /**************************
 SETUP
 **************************/
+
 *, *:before, *:after {
   box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+}
 
 a {
-  color: #0D3C5A;
-  text-decoration: underline; }
+  color: $sc;
+  text-decoration: underline;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif; }
+  font-family: $sans1;
+}
 
 h1, h2, h3, h4, h5, h6, li, ul {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 html {
   font-size: 32px;
-  font-family: "Merriweather", serif; }
+  font-family: $serif1;
+}
 
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 #pageWrapper {
   height: 100%;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /**************************
 HEADER
 **************************/
+
 header {
   height: 100%;
   width: 100%;
   min-height: 100%;
-  background-color: #8D0707;
-  color: #FFD700;
+  background-color: $pc;
+  color: $tc;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  header #headerTitle {
+  align-items: center;
+
+  #headerTitle {
     height: 80%;
     display: flex;
     justify-content: center;
-    align-items: center; }
-    header #headerTitle h1 {
-      font-size: 8rem; }
-  header #headerSorting {
+    align-items: center;
+
+    h1 {
+      font-size: 8rem;
+    }
+  }
+
+  #headerSorting {
     width: 50%;
     height: 20%;
     display: flex;
     align-items: center;
-    justify-content: space-between; }
-    header #headerSorting div {
+    justify-content: space-between;
+
+    div {
       cursor: pointer;
-      text-decoration: underline; }
+      text-decoration: underline;
+    }
+  }
+}
 
 /**************************
 MAIN
 **************************/
+
 main {
-  border-top: 50px solid #0D3C5A;
+  border-top: 50px solid $sc;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
 /**************************
 MOVIE
 **************************/
+
 .movie {
   cursor: pointer;
   position: relative;
@@ -91,31 +132,39 @@ MOVIE
   color: white;
   flex-grow: 1;
   transition: all .25s ease;
-  -webkit-transition: all .25s ease; }
-  .movie:hover {
-    -webkit-box-shadow: inset 0px 0px 100px 0px #8d0707;
-    -moz-box-shadow: inset 0px 0px 100px 0px #8d0707;
-    box-shadow: inset 0px 0px 100px 0px #8d0707; }
-  .movie .movieInfoBlock {
+  -webkit-transition: all .25s ease;
+
+  &:hover {
+    -webkit-box-shadow: inset 0px 0px 100px 0px rgba(141,7,7,1);
+    -moz-box-shadow: inset 0px 0px 100px 0px rgba(141,7,7,1);
+    box-shadow: inset 0px 0px 100px 0px rgba(141,7,7,1);
+  }
+
+  .movieInfoBlock {
     height: 100%;
     font-size: .6rem;
-    background-color: #8D0707;
+    background-color: $pc;
     position: relative;
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center; }
-    .movie .movieInfoBlock .movieTitleBlock {
+    align-items: center;
+
+    .movieTitleBlock {
       height: 20%;
       display: flex;
       align-items: center;
-      justify-content: center; }
-      .movie .movieInfoBlock .movieTitleBlock h3 {
+      justify-content: center;
+
+      h3 {
         width: 100%;
         text-align: center;
         font-weight: lighter;
-        font-size: 1.05rem; }
-    .movie .movieInfoBlock .movieDescriptionBlock {
+        font-size: 1.05rem;
+      }
+    }
+
+    .movieDescriptionBlock {
       height: 70%;
       width: 95%;
       margin: 0 auto;
@@ -123,20 +172,25 @@ MOVIE
       overflow: scroll;
       font-size: .5rem;
       background-color: white;
-      color: rgba(0, 0, 0, 0.87); }
-    .movie .movieInfoBlock .movieItemsBlock {
+      color: $fb;
+    }
+
+    .movieItemsBlock {
       height: 10%;
       display: flex;
       justify-content: space-around;
       align-items: center;
       font-size: .5rem;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter; }
+      font-family: $sans1;
+      font-weight: lighter;
+    }
+  }
+}
 
 .m1 {
-  background-image: url("tog-poster.jpg"); }
+  background-image: url('tog-poster.jpg');
+}
 
 .m2 {
-  background-image: url("sb-poster.jpg"); }
-
-/*# sourceMappingURL=styles.css.map */
+  background-image: url('sb-poster.jpg');
+}
