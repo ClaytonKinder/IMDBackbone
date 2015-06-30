@@ -232,8 +232,8 @@ main {
 .movie {
   cursor: pointer;
   position: relative;
-  width: 360px;
-  max-width: 360px;
+  width: 25%;
+  max-width: 25%;
   height: 500px;
   background-size: cover;
   color: white;
@@ -338,4 +338,76 @@ main {
 
 .m2 {
   background-image: url('sb-poster.jpg');
+}
+
+/**************************
+QUERIES
+**************************/
+
+@media screen and (max-width: 1250px) {
+  .movie {
+    width: 33%;
+    max-width: 33%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  header {
+    #headerTitle h1 {
+      font-size: 5rem;
+    }
+    #headerSorting {
+      width: 90%;
+    }
+  }
+  #formWrapper {
+    #formBlockWrapper {
+      #formBlock {
+        width: 75%;
+      }
+    }
+  }
+  .movie {
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    #headerTitle h1 {
+      font-size: 3.5rem;
+    }
+    #headerSorting {
+      width: 98%;
+    }
+  }
+  #formWrapper {
+    #formBlockWrapper {
+      #formBlock {
+        width: 98%;
+      }
+    }
+  }
+  .movie {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    #headerTitle h1 {
+      font-size: 2.5rem;
+    }
+    #headerSorting {
+      flex-wrap: wrap;
+      margin: 20px 0;
+
+      > div {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
 }

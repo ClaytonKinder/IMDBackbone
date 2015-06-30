@@ -19,6 +19,10 @@ module.exports = Backbone.View.extend({
   render: function() {
     var markup = this.template(this.model.toJSON());
     this.$el.html(markup);
+    console.log(this.model);
+    this.$el.css({
+      'background-image': 'url(' + this.model.attributes.poster + ')'
+    });
     return this;
   },
   showInfo: function() {
