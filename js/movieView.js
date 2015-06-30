@@ -14,12 +14,12 @@ module.exports = Backbone.View.extend({
     'click .movieDelete': 'deleteMovie'
   },
   initialize: function() {
-    console.log('Model view has liftoff!');
+    // console.log('Model view has liftoff!');
   },
   render: function() {
     var markup = this.template(this.model.toJSON());
     this.$el.html(markup);
-    console.log(this.model);
+    // console.log(this.model);
     this.$el.css({
       'background-image': 'url(' + this.model.attributes.poster + ')'
     });
@@ -44,7 +44,7 @@ module.exports = Backbone.View.extend({
     $('input[name="score"]').val(this.model.attributes.score);
 
     var editedMovie = this.model;
-    console.log(this.model);
+    console.log(this.model.attributes.title);
 
     $('body').on('click', '#submitEdit', function(e) {
       e.preventDefault();
@@ -57,11 +57,14 @@ module.exports = Backbone.View.extend({
         score: $('#formBlock').find('input[name="score"]').val()
       });
       editedMovie.save();
+      console.log(editedMovie);
       $('#formBlock').find('input').val('');
       $('#formBlock').find('textarea').val('');
+      $('#formArrow').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
       $('#formBlockWrapper').toggle();
       $('#submitEdit').hide();
       $('#submitForm').show();
+      editedMovie;
     });
   },
   deleteMovie: function() {

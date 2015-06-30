@@ -19,7 +19,6 @@ $('body').on('click', '#formArrow', function(e) {
 module.exports = $(function() {
   var collection = new MovieCollection();
   collection.fetch().then(function(data) {
-    console.log('Here be data', data);
     new MovieCollectionView({collection: collection});
     var newMovieForm = new FormView({collection: collection});
   });

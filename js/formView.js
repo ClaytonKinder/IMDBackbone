@@ -22,7 +22,10 @@ module.exports = Backbone.View.extend({
   },
   handleSubmit: function(event) {
     event.preventDefault();
-    this.model.set({
+    console.log(this.model);
+    console.log('SUBMITTED NEW MOVIE');
+    var newModel = new MovieModel();
+    newModel.set({
       title: this.$el.find('input[name="title"]').val(),
       poster: this.$el.find('input[name="poster"]').val(),
       plot: this.$el.find('textarea[name="plot"]').val(),
@@ -30,8 +33,8 @@ module.exports = Backbone.View.extend({
       year: this.$el.find('input[name="year"]').val(),
       score: this.$el.find('input[name="score"]').val()
     });
-    this.model.save();
-    this.collection.add(this.model);
+    newModel.save();
+    this.collection.add(newModel);
     this.$el.find('input').val('');
     this.$el.find('textarea').val('');
     $('#formBlockWrapper').toggle();

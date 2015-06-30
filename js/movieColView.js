@@ -8,7 +8,7 @@ var MovieView = require('./movieView');
 module.exports = Backbone.View.extend({
   el: '#movies',
   initialize: function() {
-    console.log('Collection view has liftoff!');
+    // console.log('Collection view has liftoff!');
     this.addAll();
     this.listenTo(this.collection, 'change', this.reload);
   },
