@@ -69,18 +69,90 @@ header {
       text-decoration: underline; }
 
 /**************************
+FORM BLOCK
+**************************/
+#formWrapper {
+  height: 75px;
+  width: 100%;
+  background-color: #0D3C5A;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  color: white; }
+  #formWrapper #formArrowBlock {
+    height: 100%;
+    background-color: #0D3C5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; }
+    #formWrapper #formArrowBlock i {
+      cursor: pointer; }
+  #formWrapper #formBlockWrapper {
+    height: 100%;
+    background-color: #0D3C5A;
+    display: none; }
+    #formWrapper #formBlockWrapper #formBlock {
+      height: auto;
+      width: 60%;
+      margin: 0 auto; }
+      #formWrapper #formBlockWrapper #formBlock h3 {
+        text-align: center;
+        padding: 30px 0;
+        text-decoration: underline; }
+      #formWrapper #formBlockWrapper #formBlock form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        #formWrapper #formBlockWrapper #formBlock form > div {
+          text-align: center;
+          margin-bottom: 20px; }
+        #formWrapper #formBlockWrapper #formBlock form .labelBlock {
+          width: 30%; }
+        #formWrapper #formBlockWrapper #formBlock form .inputBlock {
+          width: 70%; }
+          #formWrapper #formBlockWrapper #formBlock form .inputBlock input {
+            width: 90%;
+            text-align: center;
+            background-color: #0D3C5A;
+            border: 2px solid white;
+            padding: 2.5px 0; }
+            #formWrapper #formBlockWrapper #formBlock form .inputBlock input:focus {
+              outline: 0; }
+        #formWrapper #formBlockWrapper #formBlock form > label {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 15px; }
+        #formWrapper #formBlockWrapper #formBlock form textarea {
+          width: 100%;
+          min-height: 200px;
+          margin-bottom: 15px;
+          background-color: #0D3C5A;
+          border: 3px solid white;
+          padding: 5px; }
+          #formWrapper #formBlockWrapper #formBlock form textarea:focus {
+            outline: 0; }
+        #formWrapper #formBlockWrapper #formBlock form button {
+          width: 100%;
+          background-color: #0D3C5A;
+          border: 3px solid white;
+          color: white;
+          transition: all .25s ease;
+          -webkit-transition: all .25s ease; }
+          #formWrapper #formBlockWrapper #formBlock form button:hover {
+            background-color: white;
+            color: #0D3C5A; }
+        #formWrapper #formBlockWrapper #formBlock form #submitEdit {
+          display: none; }
+
+/**************************
 MAIN
 **************************/
 main {
-  border-top: 50px solid #0D3C5A;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap; }
 
-/**************************
-MOVIE
-**************************/
 .movie {
   cursor: pointer;
   position: relative;
@@ -89,6 +161,7 @@ MOVIE
   height: 500px;
   background-size: cover;
   color: white;
+  overflow: hidden;
   flex-grow: 1;
   transition: all .25s ease;
   -webkit-transition: all .25s ease; }
@@ -105,6 +178,15 @@ MOVIE
     flex-direction: column;
     justify-content: space-around;
     align-items: center; }
+    .movie .movieInfoBlock > i {
+      position: absolute;
+      font-size: 0.8rem; }
+    .movie .movieInfoBlock > i.fa-pencil {
+      left: 1%;
+      top: 1%; }
+    .movie .movieInfoBlock > i.fa-trash-o {
+      right: 1%;
+      top: 1%; }
     .movie .movieInfoBlock .movieTitleBlock {
       height: 20%;
       display: flex;
@@ -116,7 +198,7 @@ MOVIE
         font-weight: lighter;
         font-size: 1.05rem; }
     .movie .movieInfoBlock .movieDescriptionBlock {
-      height: 70%;
+      height: 60%;
       width: 95%;
       margin: 0 auto;
       padding: 20px 7.5px;
@@ -124,6 +206,20 @@ MOVIE
       font-size: .5rem;
       background-color: white;
       color: rgba(0, 0, 0, 0.87); }
+    .movie .movieInfoBlock .movieConfigureBlock {
+      height: 10%;
+      display: flex; }
+      .movie .movieInfoBlock .movieConfigureBlock > div {
+        width: 50%;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .movie .movieInfoBlock .movieConfigureBlock > div i {
+          transition: all .25s ease;
+          -webkit-transition: all .25s ease; }
+          .movie .movieInfoBlock .movieConfigureBlock > div i:hover {
+            transform: scale(1.25); }
     .movie .movieInfoBlock .movieItemsBlock {
       height: 10%;
       display: flex;

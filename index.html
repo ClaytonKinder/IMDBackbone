@@ -4,30 +4,78 @@
   <meta charset="UTF-8">
   <title>IMDBackbone</title>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,300|Roboto:400,100,700,400italic,100italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
   <link rel="stylesheet" href="styles.css">
   <script type="text/template" id="movieTmpl">
-    <div class="movie">
+    <div class="movie" style="background-image: url(<%= poster %>)">
       <div class="movieInfoBlock">
         <div class="movieTitleBlock">
-          <h3><%= Title %></h3>
+          <h3><%= title %></h3>
         </div>
         <div class="movieDescriptionBlock">
-          <%= Plot %>
+          <%= plot %>
+        </div>
+        <div class="movieConfigureBlock">
+          <div class="movieEditBlock">
+            <i class="fa fa-pencil movieEdit"></i>
+          </div>
+          <div class="movieDeleteBlock">
+            <i class="fa fa-trash-o movieDelete"></i>
+          </div>
         </div>
         <div class="movieItemsBlock">
           <div class="movieYearBlock">
-            <%= Year %>
+            <%= year %>
           </div>
           <div class="movieGenreBlock">
-            <%= Genre %>
+            <%= genre %>
           </div>
           <div class="movieRatingBlock">
-            <%= Metascore %>
+            <%= score %>
           </div>
         </div>
       </div>
     </div>
+  </script>
+  <script type="text/template" id="formTmpl">
+    <h3>Movie</h3>
+    <form action="">
+      <div class="labelBlock">
+        <label for="title">Title</label>
+      </div>
+      <div class="inputBlock">
+        <input type="text" name="title">
+      </div>
+      <div class="labelBlock">
+        <label for="poster">Poster</label>
+      </div>
+      <div class="inputBlock">
+        <input type="text" name="poster">
+      </div>
+      <div class="labelBlock">
+        <label for="genre">Genre</label>
+      </div>
+      <div class="inputBlock">
+        <input type="text" name="genre">
+      </div>
+      <div class="labelBlock">
+        <label for="year">Year</label>
+      </div>
+      <div class="inputBlock">
+        <input type="number" min="1900" max="2015" name="year">
+      </div>
+      <div class="labelBlock">
+        <label for="score">Score</label>
+      </div>
+      <div class="inputBlock">
+        <input type="number" min="0" max="100" name="score">
+      </div>
+      <label for="plot">Plot Summary</label>
+      <textarea name="plot"></textarea>
+      <button id="submitForm" type="submit">Add</button>
+      <button id="submitEdit" type="button">Submit Changes</button>
+    </form>
   </script>
 </head>
 <body>
@@ -46,21 +94,36 @@
     <div id="sortingGenre">
       Genre
     </div>
-    <div id="sortingRating">
+    <div id="sortingScore">
       Rating
     </div>
   </div>
 </header>
-<main id="main">
+<div id="formWrapper">
+  <div id="formBlockWrapper">
+    <div id="formBlock">
+
+    </div>
+  </div>
+  <div id="formArrowBlock"><i id="formArrow" class="fa fa-chevron-down"></i></div>
+</div>
+<main id="movies">
 
 </main>
 
 
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/underscore/underscore.js"></script>
-<script src="bower_components/backbone/backbone.js"></script>
-<script src="models.js"></script>
-<script src="views.js"></script>
-<script src="app.js"></script>
+<script type="text/javascript" src="bundled.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+var clearServer = function() {
+  $.ajax({
+    url: 'http://tiy-fee-rest.herokuapp.com/collections/imb_backbone',
+    method: 'DELETE',
+    success: function (data) {
+      log('Server cleared!');
+    }
+  });
+}
+</script>
 </body>
 </html>

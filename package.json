@@ -1,0 +1,28 @@
+{
+  "name": "backbone2",
+  "version": "1.0.0",
+  "main": "bundled.js",
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "browserify": "^10.2.4",
+    "jquery": "^2.1.4",
+    "backbone": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "bundle": "browserify js/app.js -o bundled.js -d",
+    "serve": "serve",
+    "start": "npm run bundle && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ClaytonKinder/backbone-imdb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ClaytonKinder/backbone-imdb/issues"
+  },
+  "homepage": "https://github.com/ClaytonKinder/backbone-imdb"
+}

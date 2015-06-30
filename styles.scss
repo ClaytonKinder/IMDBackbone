@@ -107,20 +107,127 @@ header {
 }
 
 /**************************
+FORM BLOCK
+**************************/
+
+#formWrapper {
+  height: 75px;
+  width: 100%;
+  background-color: $sc;
+  font-family: $sans1;
+  font-weight: lighter;
+  color: white;
+
+  #formArrowBlock {
+    height: 100%;
+    background-color: $sc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  #formBlockWrapper {
+    height: 100%;
+    background-color: $sc;
+    display: none;
+
+    #formBlock {
+      height: auto;
+      width: 60%;
+      margin: 0 auto;
+
+      h3 {
+        text-align: center;
+        padding: 30px 0;
+        text-decoration: underline;
+      }
+
+      form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > div {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .labelBlock {
+          width: 30%;
+        }
+
+        .inputBlock {
+          width: 70%;
+
+          input {
+            width: 90%;
+            text-align: center;
+            background-color: $sc;
+            border: 2px solid white;
+            padding: 2.5px 0;
+
+            &:focus {
+              outline: 0;
+            }
+          }
+        }
+
+        > label {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+
+        textarea {
+          width: 100%;
+          min-height: 200px;
+          margin-bottom: 15px;
+          background-color: $sc;
+          border: 3px solid white;
+          padding: 5px;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        button {
+          width: 100%;
+          background-color: $sc;
+          border: 3px solid white;
+          color: white;
+          transition: all .25s ease;
+          -webkit-transition: all .25s ease;
+
+          &:hover {
+            background-color: white;
+            color: $sc;
+          }
+        }
+
+        #submitEdit {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/**************************
 MAIN
 **************************/
 
 main {
-  border-top: 50px solid $sc;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
 }
-
-/**************************
-MOVIE
-**************************/
 
 .movie {
   cursor: pointer;
@@ -130,6 +237,7 @@ MOVIE
   height: 500px;
   background-size: cover;
   color: white;
+  overflow: hidden;
   flex-grow: 1;
   transition: all .25s ease;
   -webkit-transition: all .25s ease;
@@ -150,6 +258,21 @@ MOVIE
     justify-content: space-around;
     align-items: center;
 
+    > i {
+      position: absolute;
+      font-size: 0.8rem;
+    }
+
+    > i.fa-pencil {
+      left: 1%;
+      top: 1%;
+    }
+
+    > i.fa-trash-o {
+      right: 1%;
+      top: 1%;
+    }
+
     .movieTitleBlock {
       height: 20%;
       display: flex;
@@ -165,7 +288,7 @@ MOVIE
     }
 
     .movieDescriptionBlock {
-      height: 70%;
+      height: 60%;
       width: 95%;
       margin: 0 auto;
       padding: 20px 7.5px;
@@ -173,6 +296,28 @@ MOVIE
       font-size: .5rem;
       background-color: white;
       color: $fb;
+    }
+
+    .movieConfigureBlock {
+      height: 10%;
+      display: flex;
+
+      > div {
+        width: 50%;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          transition: all .25s ease;
+          -webkit-transition: all .25s ease;
+
+          &:hover {
+            transform: scale(1.25);
+          }
+        }
+      }
     }
 
     .movieItemsBlock {
