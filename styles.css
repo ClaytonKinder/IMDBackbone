@@ -107,7 +107,10 @@ FORM BLOCK
           text-align: center;
           margin-bottom: 20px; }
         #formWrapper #formBlockWrapper #formBlock form .labelBlock {
-          width: 30%; }
+          width: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
         #formWrapper #formBlockWrapper #formBlock form .inputBlock {
           width: 70%; }
           #formWrapper #formBlockWrapper #formBlock form .inputBlock input {
@@ -202,11 +205,11 @@ main {
       height: 60%;
       width: 95%;
       margin: 0 auto;
-      padding: 20px 7.5px;
-      overflow: scroll;
-      font-size: .5rem;
-      background-color: white;
-      color: rgba(0, 0, 0, 0.87); }
+      padding: 0 7.5px;
+      border-bottom: 1px solid white;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: .44rem; }
     .movie .movieInfoBlock .movieConfigureBlock {
       height: 10%;
       display: flex; }
@@ -256,10 +259,16 @@ QUERIES
     width: 50%;
     max-width: 50%; } }
 @media screen and (max-width: 600px) {
-  header #headerTitle h1 {
-    font-size: 3.5rem; }
-  header #headerSorting {
-    width: 98%; }
+  header {
+    height: 400px;
+    min-height: 400px; }
+    header #headerTitle {
+      height: 60%; }
+      header #headerTitle h1 {
+        font-size: 3.5rem; }
+    header #headerSorting {
+      height: 40%;
+      width: 98%; }
 
   #formWrapper #formBlockWrapper #formBlock {
     width: 98%; }
@@ -275,6 +284,9 @@ QUERIES
     margin: 20px 0; }
     header #headerSorting > div {
       width: 50%;
-      text-align: center; } }
+      text-align: center; }
+
+  #formWrapper #formBlockWrapper #formBlock .labelBlock {
+    font-size: .7rem; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -27,6 +27,7 @@ module.exports = Backbone.View.extend({
   },
   showInfo: function() {
     this.$el.find('.movieInfoBlock').toggle();
+    this.$el.siblings().find('.movieInfoBlock').hide();
   },
   editMovie: function() {
     if ($('#formBlockWrapper').css('display') === 'none') {

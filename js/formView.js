@@ -37,6 +37,7 @@ module.exports = Backbone.View.extend({
     this.collection.add(newModel);
     this.$el.find('input').val('');
     this.$el.find('textarea').val('');
+    $('#formArrow').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
     $('#formBlockWrapper').toggle();
   }
 });

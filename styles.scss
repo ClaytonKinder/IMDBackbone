@@ -159,6 +159,9 @@ FORM BLOCK
 
         .labelBlock {
           width: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .inputBlock {
@@ -292,11 +295,12 @@ main {
       height: 60%;
       width: 95%;
       margin: 0 auto;
-      padding: 20px 7.5px;
-      overflow: scroll;
-      font-size: .5rem;
-      background-color: white;
-      color: $fb;
+      padding: 0 7.5px;
+      border-bottom: 1px solid white;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: .44rem;
+
     }
 
     .movieConfigureBlock {
@@ -376,10 +380,19 @@ QUERIES
 
 @media screen and (max-width: 600px) {
   header {
-    #headerTitle h1 {
-      font-size: 3.5rem;
+    height: 400px;
+    min-height: 400px;
+
+    #headerTitle {
+      height: 60%;
+
+      h1 {
+       font-size: 3.5rem;
+      }
     }
+
     #headerSorting {
+      height: 40%;
       width: 98%;
     }
   }
@@ -408,6 +421,17 @@ QUERIES
       > div {
         width: 50%;
         text-align: center;
+      }
+    }
+  }
+
+  #formWrapper {
+    #formBlockWrapper {
+      #formBlock {
+
+        .labelBlock {
+          font-size: .7rem;
+        }
       }
     }
   }
