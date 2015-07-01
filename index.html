@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IMDBackbone</title>
+  <link rel="shortcut icon" href="movie_favicon.ico" type="image/x-icon" />
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,300|Roboto:400,100,700,400italic,100italic,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script type="text/template" id="movieTmpl">
-    <!-- <div class="movie" style="background-image: url(<%= poster %>)"> -->
       <div class="movieInfoBlock">
         <div class="movieTitleBlock">
           <h3><%= title %></h3>
@@ -37,7 +37,20 @@
           </div>
         </div>
       </div>
-    <!-- </div> -->
+  </script>
+  <script type="text/template" id="sortTmpl">
+    <div id="sortingTitle">
+      Title
+    </div>
+    <div id="sortingYear">
+      Year
+    </div>
+    <div id="sortingGenre">
+      Genre
+    </div>
+    <div id="sortingScore">
+      Score
+    </div>
   </script>
   <script type="text/template" id="formTmpl">
     <h3>Movie</h3>
@@ -75,7 +88,44 @@
       <label for="plot">Plot Summary</label>
       <textarea name="plot"></textarea>
       <button id="submitForm" type="submit">Add</button>
-      <button id="submitEdit" type="button">Submit Changes</button>
+    </form>
+  </script>
+  <script type="text/template" id="formEditTmpl">
+    <form>
+    <div class="labelBlock">
+      <label for="title">Title</label>
+    </div>
+    <div class="inputBlock">
+      <input id="editTitle" type="text" name="title">
+    </div>
+    <div class="labelBlock">
+      <label for="poster">Poster</label>
+    </div>
+    <div class="inputBlock">
+      <input type="text" name="poster">
+    </div>
+    <div class="labelBlock">
+      <label for="genre">Genre</label>
+    </div>
+    <div class="inputBlock">
+      <input type="text" name="genre">
+    </div>
+    <div class="labelBlock">
+      <label for="year">Year</label>
+    </div>
+    <div class="inputBlock">
+      <input type="number" min="1900" max="2015" name="year">
+    </div>
+    <div class="labelBlock">
+      <label for="score">Score</label>
+    </div>
+    <div class="inputBlock">
+      <input type="number" min="0" max="100" name="score">
+    </div>
+    <label for="plot">Plot Summary</label>
+    <textarea name="plot"></textarea>
+    <button id="editCancel" type="button">Cancel</button>
+    <button id="submitEdit" type="submit">Submit</button>
     </form>
   </script>
 </head>
@@ -86,30 +136,21 @@
     <h1>Movies</h1>
   </div>
   <div id="headerSorting">
-    <div id="sortingTitle">
-      Title
-    </div>
-    <div id="sortingYear">
-      Year
-    </div>
-    <div id="sortingGenre">
-      Genre
-    </div>
-    <div id="sortingScore">
-      Rating
-    </div>
+    <!-- SORT GOES HERE -->
   </div>
 </header>
 <div id="formWrapper">
   <div id="formBlockWrapper">
     <div id="formBlock">
-
+      <!-- FORM GOES HERE -->
     </div>
   </div>
-  <div id="formArrowBlock"><i id="formArrow" class="fa fa-chevron-down"></i></div>
+  <div id="formArrowBlock">
+    <!-- FORM ARROW GOES HERE -->
+  </div>
 </div>
 <main id="movies">
-
+  <!-- MOVIE GOES HERE -->
 </main>
 
 

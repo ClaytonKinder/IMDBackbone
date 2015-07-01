@@ -136,88 +136,84 @@ FORM BLOCK
     background-color: $sc;
     display: none;
 
-    #formBlock {
-      height: auto;
-      width: 60%;
-      margin: 0 auto;
+      #formBlock {
+        height: auto;
+        width: 60%;
+        margin: 0 auto;
 
-      h3 {
-        text-align: center;
-        padding: 30px 0;
-        text-decoration: underline;
-      }
-
-      form {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        > div {
+        h3 {
           text-align: center;
-          margin-bottom: 20px;
+          padding: 30px 0;
+          text-decoration: underline;
         }
 
-        .labelBlock {
-          width: 30%;
+        form {
           display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+          flex-direction: row;
+          flex-wrap: wrap;
 
-        .inputBlock {
-          width: 70%;
-
-          input {
-            width: 90%;
+          > div {
             text-align: center;
+            margin-bottom: 20px;
+          }
+
+          .labelBlock {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .inputBlock {
+            width: 70%;
+
+            input {
+              width: 90%;
+              text-align: center;
+              background-color: $sc;
+              border: 2px solid white;
+              padding: 2.5px 0;
+
+              &:focus {
+                outline: 0;
+              }
+            }
+          }
+
+          > label {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+
+          textarea {
+            width: 100%;
+            min-height: 200px;
+            margin-bottom: 15px;
             background-color: $sc;
-            border: 2px solid white;
-            padding: 2.5px 0;
+            border: 3px solid white;
+            padding: 5px;
 
             &:focus {
               outline: 0;
             }
           }
-        }
 
-        > label {
-          width: 100%;
-          text-align: center;
-          margin-bottom: 15px;
-        }
+          button {
+            width: 100%;
+            background-color: $sc;
+            border: 3px solid white;
+            color: white;
+            transition: all .25s ease;
+            -webkit-transition: all .25s ease;
 
-        textarea {
-          width: 100%;
-          min-height: 200px;
-          margin-bottom: 15px;
-          background-color: $sc;
-          border: 3px solid white;
-          padding: 5px;
-
-          &:focus {
-            outline: 0;
+            &:hover {
+              background-color: white;
+              color: $sc;
+            }
           }
-        }
-
-        button {
-          width: 100%;
-          background-color: $sc;
-          border: 3px solid white;
-          color: white;
-          transition: all .25s ease;
-          -webkit-transition: all .25s ease;
-
-          &:hover {
-            background-color: white;
-            color: $sc;
-          }
-        }
-
-        #submitEdit {
-          display: none;
         }
       }
-    }
   }
 }
 
@@ -334,6 +330,77 @@ main {
       font-family: $sans1;
       font-weight: lighter;
     }
+
+    form {
+      height: 100%;
+      padding: 2% 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      > div {
+        text-align: center;
+        margin-bottom: 2px;
+      }
+
+      .labelBlock {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .inputBlock {
+        width: 70%;
+
+        input {
+          width: 90%;
+          text-align: center;
+          background-color: $pc;
+          border: 2px solid white;
+          padding: 2.5px 0;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+
+      > label {
+        width: 100%;
+        text-align: center;
+        margin: 7.5px 0;
+      }
+
+      textarea {
+        width: 95%;
+        margin: 0 auto;
+        min-height: 200px;
+        margin-bottom: 15px;
+        background-color: $pc;
+        border: 3px solid white;
+        padding: 5px;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      button {
+        width: 45%;
+        margin: 0 auto;
+        background-color: $pc;
+        border: 3px solid white;
+        color: white;
+        transition: all .25s ease;
+        -webkit-transition: all .25s ease;
+
+        &:hover {
+          background-color: white;
+          color: $pc;
+        }
+      }
+    }
   }
 }
 
@@ -351,8 +418,8 @@ QUERIES
 
 @media screen and (max-width: 1250px) {
   .movie {
-    width: 33%;
-    max-width: 33%;
+    width: 33.33333%;
+    max-width: 33.33333%;
   }
 }
 

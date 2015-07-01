@@ -4,26 +4,24 @@ Backbone.$ = $;
 var _ = require('underscore');
 var MovieModel = require('./movie');
 
-
 module.exports = Backbone.View.extend({
-  el: '#formBlock',
   template: _.template($('#formTmpl').html().trim()),
-  initialize: function() {
+  initialize: function(options) {
     this.render();
   },
   events: {
-    'submit form': 'handleSubmit',
+    'submit form': 'handleSubmit'
   },
   render: function() {
-    this.model = new MovieModel();
-    var markup = this.template(this.model.toJSON());
+    var myModel = this.model;
+    var markup = this.template(myModel);
     this.$el.html(markup);
     return this;
   },
   handleSubmit: function(event) {
     event.preventDefault();
-    console.log(this.model);
-    console.log('SUBMITTED NEW MOVIE');
+
+    console.log('POST');
     var newModel = new MovieModel();
     newModel.set({
       title: this.$el.find('input[name="title"]').val(),
@@ -35,6 +33,7 @@ module.exports = Backbone.View.extend({
     });
     newModel.save();
     this.collection.add(newModel);
+    $(this.el).undelegate('form', 'submit');
     this.$el.find('input').val('');
     this.$el.find('textarea').val('');
     $('#formArrow').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');

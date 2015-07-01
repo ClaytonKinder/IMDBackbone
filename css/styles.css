@@ -144,8 +144,6 @@ FORM BLOCK
           #formWrapper #formBlockWrapper #formBlock form button:hover {
             background-color: white;
             color: #0D3C5A; }
-        #formWrapper #formBlockWrapper #formBlock form #submitEdit {
-          display: none; }
 
 /**************************
 MAIN
@@ -232,6 +230,55 @@ main {
       font-size: .5rem;
       font-family: "Roboto", sans-serif;
       font-weight: lighter; }
+    .movie .movieInfoBlock form {
+      height: 100%;
+      padding: 2% 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .movie .movieInfoBlock form > div {
+        text-align: center;
+        margin-bottom: 2px; }
+      .movie .movieInfoBlock form .labelBlock {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .movie .movieInfoBlock form .inputBlock {
+        width: 70%; }
+        .movie .movieInfoBlock form .inputBlock input {
+          width: 90%;
+          text-align: center;
+          background-color: #8D0707;
+          border: 2px solid white;
+          padding: 2.5px 0; }
+          .movie .movieInfoBlock form .inputBlock input:focus {
+            outline: 0; }
+      .movie .movieInfoBlock form > label {
+        width: 100%;
+        text-align: center;
+        margin: 7.5px 0; }
+      .movie .movieInfoBlock form textarea {
+        width: 95%;
+        margin: 0 auto;
+        min-height: 200px;
+        margin-bottom: 15px;
+        background-color: #8D0707;
+        border: 3px solid white;
+        padding: 5px; }
+        .movie .movieInfoBlock form textarea:focus {
+          outline: 0; }
+      .movie .movieInfoBlock form button {
+        width: 45%;
+        margin: 0 auto;
+        background-color: #8D0707;
+        border: 3px solid white;
+        color: white;
+        transition: all .25s ease;
+        -webkit-transition: all .25s ease; }
+        .movie .movieInfoBlock form button:hover {
+          background-color: white;
+          color: #8D0707; }
 
 .m1 {
   background-image: url("tog-poster.jpg"); }
@@ -244,8 +291,8 @@ QUERIES
 **************************/
 @media screen and (max-width: 1250px) {
   .movie {
-    width: 33%;
-    max-width: 33%; } }
+    width: 33.33333%;
+    max-width: 33.33333%; } }
 @media screen and (max-width: 850px) {
   header #headerTitle h1 {
     font-size: 5rem; }
