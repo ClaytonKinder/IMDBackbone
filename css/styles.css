@@ -83,10 +83,11 @@ FORM BLOCK
     background-color: #0D3C5A;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 2rem; }
-    #formWrapper #formArrowBlock i {
-      cursor: pointer; }
+    align-items: center; }
+    #formWrapper #formArrowBlock #formArrow {
+      padding: 10px 0;
+      cursor: pointer;
+      font-size: 1rem; }
   #formWrapper #formBlockWrapper {
     height: 100%;
     background-color: #0D3C5A;

@@ -9,7 +9,7 @@ var FormView = require('./formView');
 
 module.exports = Backbone.View.extend({
   el: '#formArrowBlock',
-  template: '<i id="formArrow" class="fa fa-chevron-down"></i>',
+  template: '<i id="formArrow" class="fa fa-plus"></i>',
   initialize: function(options) {
     this.render();
   },
@@ -30,7 +30,7 @@ module.exports = Backbone.View.extend({
     $('#formBlock').find('input').val('');
     $('#formBlock').find('textarea').val('');
     $('#formWrapper').css('height', 'auto');
-    $('#formArrow').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+    $('#formArrow').toggleClass('fa-plus').toggleClass('fa-minus');
     $('#formBlockWrapper').toggle();
   }
 });
